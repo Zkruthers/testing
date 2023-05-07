@@ -1,0 +1,28 @@
+mat-form-field {
+  width: 95%;
+}
+
+
+.button-creaedita-comentario {
+  margin-right: 20px;
+  background-color: #7ECECA;
+  color: white;
+  margin-bottom:  20px;
+}
+
+.title-creaedita-comentario {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bolder;
+  padding: 15px;
+}
+
+.form-comentario {
+  background-color: rgba(22, 147, 165, 0.2);
+  text-align: center;
+  margin: 0 350px 0 350px;
+  border-radius: 20px;
+}
+
+.buttons-registrar-comentario {
+  text-align: center;
+}

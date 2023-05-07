@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <!---->
+    <div *ngIf="edicion; then actualizar else registrar"></div>
+
+    <ng-template #actualizar>
+      <div style="text-align: center;" #actualizar>
+        <h1 class="title-creaedita-usuario">Actualizar Usuario</h1>
+      </div>
+    </ng-template>
+
+    <ng-template #registrar>
+      <div style="text-align: center;" #registrar>
+        <h1 class="title-creaedita-usuario">Registrar Usuario</h1>
+      </div>
+    </ng-template>
+
+    <!---->
+
+    <form [formGroup]="form" (submit)="aceptar()" class="form-usuario">
+
+      <mat-form-field class="example-full-witdh" style="margin-top: 20px;">
+        <mat-label>Id</mat-label>
+        <input matInput required placeholder="Código" formControlName="id">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-witdh">
+        <mat-label>Nombres</mat-label>
+        <input matInput required placeholder="Escribe tu nombre completo" formControlName="nombres">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-witdh">
+        <mat-label>Apellidos</mat-label>
+        <input matInput required placeholder="Escribe tu apellido completo" formControlName="apellidos">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-witdh">
+        <mat-label>Email</mat-label>
+        <input matInput required placeholder="ejemplo@gmail.com" formControlName="email">
+      </mat-form-field>
+
+
+      <br>
+
+      <mat-form-field class="example-full-witdh">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" required placeholder="Contraseña" formControlName="contrasena"
+        [type]="hide ? 'password' : 'text'">
+        <i style="margin-right: 10px;" class="material-icons" matSuffix (click)="hide = !hide"> {{hide ? 'visibility': 'visibility_off'}}</i>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-witdh">
+        <mat-label>Teléfono</mat-label>
+        <input matInput required placeholder="(+51) xxx-xxx-xxx" formControlName="telefono">
+      </mat-form-field>
+
+      <br>
+
+      <div class="buttons-registrar-usuario">
+        <button mat-raised-button class="button-creaedita-usuario" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" style="margin-bottom: 20px;" routerLink="/usuarios">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+
+</html>

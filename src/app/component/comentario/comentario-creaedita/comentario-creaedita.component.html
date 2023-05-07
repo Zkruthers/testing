@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <br>
+   <!---->
+  <div class="container">
+    <div style="text-align: center;">
+    <h1 class="title-creaedita-comentario">REGISTRO DE COMENTARIOS</h1>
+  </div>
+
+   <!---->
+  <form [formGroup]="form" (submit)="aceptar()" class="form-comentario" >
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput required placeholder="comantarioID#" formControlName="id">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Usuario Id</mat-label>
+      <input matInput required placeholder="usuarioID#" formControlName="usuarioId">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripción</mat-label>
+      <input matInput required placeholder="Por favor ingrese su comentario" type="text"  name="describir" formControlName="descripcion" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Publicación</mat-label>
+      <input matInput required placeholder="Publicación Id" formControlName="publicacionId">
+    </mat-form-field>
+    <div class="alert alert-danger mt-3" [hidden]="!form.pristine" >Por favor llenar el campo descripcion, es un campo obligatorio</div>
+    <br>
+    <div class="buttons-registrar-comentario">
+    <button mat-raised-button class="button-creaedita-comentario" (click)="aceptar()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/comentarios" style="margin-bottom: 20px;">Cancelar</button>
+    <br>
+  </div>
+    <p>{{mensaje}}</p>
+
+  </form>
+</div>
+
+</body>
+</html>

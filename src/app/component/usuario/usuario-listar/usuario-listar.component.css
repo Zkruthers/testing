@@ -1,0 +1,19 @@
+.button-update {
+  background-color: #7ECECA;
+  color: white;
+}
+
+.button-insert {
+  background-color: #7ECECA !important;
+  margin-bottom: 15px;
+  color: white !important;
+}
+
+.form-usuario {
+  padding: 40px;
+}
+
+.title-usuario-lista {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bolder;
+}
