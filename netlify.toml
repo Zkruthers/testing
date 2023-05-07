@@ -1,5 +1,6 @@
 [build]
-  command = "ng build --configuration production && npm run json-server"
+  command = "ng build --configuration production"
+  command = "gnome-terminal -- bash -c 'npm run json-server; exec bash'"
   publish = "dist/tf_arquiweb"
 
 [dev]
