@@ -1,11 +1,11 @@
 [build]
   command = "ng build --configuration production && npm run json-server"
-  publish = "dist/nombre-de-tu-app"
+  publish = "dist/tf_arquiweb"
 
 [dev]
   command = "ng serve --open"
 
 [[redirects]]
   from = "/api/*"
-  to = "http://localhost:5000/:splat"
+  to = "http://localhost:3000/:splat"
   status = 200
