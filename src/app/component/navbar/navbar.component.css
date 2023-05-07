@@ -1,0 +1,17 @@
+.logo {
+  font-family: 'Arial Black', serif;
+  font-weight: bolder;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.btn-nav-general {
+  color: white !important;
+}
+
+button:active {
+  color: black !important;
+}

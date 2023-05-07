@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <br />
+    <div class="form-comentario" >
+      <div style="text-align: center">
+        <h1 class="title-comentario-lista">LISTADO DE COMENTARIOS</h1>
+      </div>
+      <div style="text-align: right">
+        <button mat-raised-button color="primary" class="button-insert" routerLink="/comentarios/nuevo">
+          Nuevo
+        </button>
+      </div>
+
+      <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef>Codigo</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.usuarioId }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef>Fecha</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fechaPublicacion | date : "dd/MM/YYYY" }}
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+          <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="publicacion">
+          <th mat-header-cell *matHeaderCellDef>Publicacion</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.publicacionId }}
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="accion01">
+          <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button [routerLink]="['edicion', element.id]" class="button-update">
+              <span class="material-icons button-update">autorenew</span>
+            </button>
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="accion02">
+          <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="confirm(element.id)"
+            >
+              <span class="material-icons">delete_forever</span>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+        showFirstLastButtons
+      >
+      </mat-paginator>
+
+    </div>
+  </body>
+</html>

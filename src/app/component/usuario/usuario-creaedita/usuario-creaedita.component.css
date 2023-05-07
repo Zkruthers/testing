@@ -1,0 +1,27 @@
+mat-form-field {
+  width: 400px;
+}
+
+.button-creaedita-usuario {
+  margin-right: 20px;
+  background-color: #7ECECA;
+  color: white;
+  margin-bottom:  20px;
+}
+
+.title-creaedita-usuario {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bolder;
+  padding: 15px;
+}
+
+.form-usuario {
+  background-color: rgba(22, 147, 165, 0.2);
+  text-align: center;
+  margin: 0 350px 0 350px;
+  border-radius: 20px;
+}
+
+.buttons-registrar-usuario {
+  text-align: center;
+}
