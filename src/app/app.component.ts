@@ -9,13 +9,5 @@ import { Component} from '@angular/core';
 export class AppComponent{
   title = 'tf_arquiweb';
 
-  serverData: any;
-  constructor(private http: HttpClient) {}
-  ngOnInit() {
-    this.http.get('http://localhost:5000').subscribe(data => {
-      this.serverData = data;
-      console.log(this.serverData);
-    });
-  }
 
 }
